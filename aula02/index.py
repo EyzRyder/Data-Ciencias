@@ -88,5 +88,8 @@ def aula02(df):
 
 
 
-def dadosAula01():
-    print()
+def dadosAula02(df):
+    df_limpo = df.dropna()
+    df_limpo = df_limpo.assign(ano=df_limpo['ano'].astype('Int64'))
+    df_limpo.to_csv('dados-imersao.csv', index=False)
+    return df_limpo
